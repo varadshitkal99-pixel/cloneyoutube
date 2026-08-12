@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 
 
+
 // This describes the "shape" a real logged-in user object must have.
 // Every user needs an id (number), a name, an email, and an image (all text/strings).
 type User = {
