@@ -1,40 +1,85 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# YourTube — A YouTube Clone
+
+A YouTube-inspired video platform UI built with Next.js, TypeScript, and Tailwind CSS. Built as a learning project to practice component architecture, dynamic routing, and state management in React.
+
+![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat&logo=next.js&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=typescript&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat&logo=tailwind-css&logoColor=white)
+
+## Features
+
+- **Homepage** — Responsive video grid (1–4 columns depending on screen size) with category filter chips (All, Coding, Music, Gaming)
+- **Collapsible sidebar** — Animated slide open/close, grouped navigation links
+- **Watch page** — Dynamic routing per video (`/watch/[id]`), like/dislike counters, comments section, related videos sidebar
+- **Watch history page** — Filterable list view with a history management panel
+- **Header** — Search bar, sign-in/avatar state toggle, sidebar control
+
+## Tech Stack
+
+- **Framework:** [Next.js](https://nextjs.org/) (Pages Router)
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS
+- **UI Components:** [shadcn/ui](https://ui.shadcn.com/)
+- **Icons:** [Lucide React](https://lucide.dev/)
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- Node.js installed on your machine
+
+### Installation
+
+1. Clone the repository
+   ```bash
+   git clone <your-repo-url>
+   cd yourtube
+   ```
+
+2. Install dependencies
+   ```bash
+   npm install
+   ```
+
+3. Run the development server
+   ```bash
+   npm run dev
+   ```
+
+4. Open [http://localhost:3000](http://localhost:3000) in your browser
+
+## Project Structure
+
+```
+src/
+├── components/
+│   ├── ui/              # shadcn-generated components (button, input, avatar, etc.)
+│   ├── Sidebar.tsx
+│   ├── CategoryChips.tsx
+│   ├── CommentSection.tsx
+│   └── RelatedVideos.tsx
+├── data/
+│   ├── videos.ts         # Sample video data
+│   └── comments.ts        # Sample comment data
+├── pages/
+│   ├── index.tsx           # Homepage
+│   ├── history.tsx         # Watch history page
+│   └── watch/
+│       └── [id].tsx         # Dynamic video watch page
+└── styles/
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Notes
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+This project uses static, hardcoded sample data rather than a live backend or database. There is no real authentication — the signed-in state is simulated. It was built primarily as a hands-on way to learn Next.js routing, component composition, and state management.
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## Possible Next Steps
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+- Connect to a real backend/database instead of static data
+- Add authentication (e.g., NextAuth.js)
+- Make the search bar filter results
+- Persist likes/history between sessions
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## License
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+This project is for educational purposes.
