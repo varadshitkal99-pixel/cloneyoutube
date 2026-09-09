@@ -30,7 +30,7 @@ const Header = ({ onMenuClick }: HeaderProps) => {
   // Fake/placeholder user data for now. Later, this would come from real
   // login/auth data instead of being hardcoded. It's typed as "User | null"
   // meaning it's EITHER a full User object, OR null (logged out).
-  const user: User | null = null;
+  const [user] = useState<User | null>(null);
 
   // React "state" — a value that can change over time and causes a
   // re-render whenever it updates. Starts as an empty string.
